@@ -13,7 +13,7 @@ services:
     build:
       context: ./
     environment:
-      DATABASE_URL: postgres://user:pass@db:5432/database?schema=public
+      DATABASE_URL: postgres://user:pass@db-fake:5432/database?schema=public
     depends_on:
       - db
     ports:
