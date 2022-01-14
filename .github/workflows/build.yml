@@ -15,5 +15,9 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-      - name: Docker build
-        run: docker build .
+      - name: Database up
+        run: docker-compose up -d --build db
+      - name: Run Prisma builder
+        run: docker-compose up --build prisma
+      - name: All done, stop
+        run: docker-compose down

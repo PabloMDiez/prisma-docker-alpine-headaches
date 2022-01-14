@@ -13,9 +13,4 @@ RUN echo $(cat /etc/os-release)
 
 COPY . /usr/src/app
 
-RUN npx prisma generate
-
-RUN npx prisma migrate dev --name init
-
-EXPOSE 3000
-CMD ["yarn", "dev"]
+CMD ["sh", "scripts/run-prisma.sh"]
